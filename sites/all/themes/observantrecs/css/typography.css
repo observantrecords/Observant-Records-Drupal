@@ -1,0 +1,18 @@
+/* CSS crunched with Crunch - http://crunchapp.net/ */
+.default-font{font-family:"CartoGothicStd";src:url("fonts/CartoGothicStd-Book-webfont.eot");src:url("fonts/CartoGothicStd-Book-webfont.eot?iefix") format("eot"),url("fonts/CartoGothicStd-Book-webfont.woff") format("woff"),url("fonts/CartoGothicStd-Book-webfont.ttf") format("truetype"),url("fonts/CartoGothicStd-Book-webfont.svg#webfont") format("svg");}
+@font-face{font-family:"CartoGothicStd";src:url("fonts/CartoGothicStd-Book-webfont.eot");src:url("fonts/CartoGothicStd-Book-webfont.eot?iefix") format("eot"),url("fonts/CartoGothicStd-Book-webfont.woff") format("woff"),url("fonts/CartoGothicStd-Book-webfont.ttf") format("truetype"),url("fonts/CartoGothicStd-Book-webfont.svg#webfont") format("svg");}@font-face{font-family:"CartoGothicStd";src:url("fonts/CartoGothicStd-Book-webfont.eot");src:url("fonts/CartoGothicStd-Book-webfont.eot?iefix") format("eot"),url("fonts/CartoGothicStd-Book-webfont.woff") format("woff"),url("fonts/CartoGothicStd-Book-webfont.ttf") format("truetype"),url("fonts/CartoGothicStd-Book-webfont.svg#webfont") format("svg");font-style:italic, oblique;}@font-face{font-family:"CartoGothicStd";src:url("fonts/CartoGothicStd-Book-webfont.eot");src:url("fonts/CartoGothicStd-Book-webfont.eot?iefix") format("eot"),url("fonts/CartoGothicStd-Book-webfont.woff") format("woff"),url("fonts/CartoGothicStd-Book-webfont.ttf") format("truetype"),url("fonts/CartoGothicStd-Book-webfont.svg#webfont") format("svg");font-weight:bold;}@font-face{font-family:"CartoGothicStd";src:url("fonts/CartoGothicStd-Book-webfont.eot");src:url("fonts/CartoGothicStd-Book-webfont.eot?iefix") format("eot"),url("fonts/CartoGothicStd-Book-webfont.woff") format("woff"),url("fonts/CartoGothicStd-Book-webfont.ttf") format("truetype"),url("fonts/CartoGothicStd-Book-webfont.svg#webfont") format("svg");font-weight:bold;font-style:italic, oblique;}a{color:#304b75;}
+a:hover{color:#402c29;}
+h1,h2,h3,h4,h5,h6{font-family:'Helvetica','Arial',sans-serif;}
+#nav-header ul.links{font-family:'CartoGothicStd','Helvetica','Arial',sans-serif;font-size:120%;}
+#page-title{font-family:'CartoGothicStd','Helvetica','Arial',sans-serif;}
+#title{font-family:'Lucida Sans Unicode',sans-serif;}#title a{text-decoration:none;color:#000;}
+footer{color:#000;font-size:95%;}
+#masthead a,#masthead a:hover{color:#FFF;}
+input[type=text],input[type=password],input[type=email],select,textarea{font-size:100%;font-family:inherit;}
+.form_hidden{display:none;}
+.smaller{font-size:smaller;}
+table.track-table{font-family:'Helvetica','Arial',sans-serif;}
+.button{font-size:120%;text-decoration:none;color:#FFF;}
+.button:hover{color:#FFF;}
+.submitted{font-style:italic;}
+.node h3 a{text-decoration:none;}

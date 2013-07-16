@@ -1,0 +1,8 @@
+name = Shinkyoku Advocacy
+description = Shinkyoku Advocacy chrome for Drupal
+version = 0.01
+core = 7.x
+
+stylesheets[screen, projection][] = css/layout.css
+stylesheets[all][] = css/typography.css
+stylesheets[screen and (max-width: 600px)][] = css/mobile.css

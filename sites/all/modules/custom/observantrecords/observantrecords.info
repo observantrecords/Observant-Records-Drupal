@@ -1,0 +1,10 @@
+name = Observant Records Connector
+description = "Connect data from the Observant Records database to Drupal"
+package = Observant Records
+files[] = observantrecords.audio.inc
+files[] = observantrecords.model.inc
+files[] = observantrecords.model.artists.inc
+files[] = observantrecords.model.albums.inc
+files[] = observantrecords.model.audio.inc
+files[] = observantrecords.model.tracks.inc
+core = 7.x

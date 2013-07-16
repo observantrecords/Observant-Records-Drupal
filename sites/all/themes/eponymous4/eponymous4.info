@@ -1,0 +1,9 @@
+name = Eponymous 4
+description = Eponymous 4 chrome for Drupal
+version = 0.01
+core = 7.x
+
+stylesheets[screen, projection][] = css/layout.css
+stylesheets[all][] = css/typography.css
+stylesheets[screen and (max-width: 600px)][] = css/mobile.css
+stylesheets[screen, projection][] = css/skins/ep4/skin.css

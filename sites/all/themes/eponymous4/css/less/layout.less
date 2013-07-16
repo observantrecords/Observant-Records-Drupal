@@ -1,0 +1,197 @@
+/*
+    Document   : layout
+    Created on : Sep 10, 2011, 12:15:55 AM
+    Author     : Greg Bueno
+    Description:
+        Uses the Minimalist Design and Sleepy Hollow color schemes from the
+	Color Schemer Gallery.
+*/
+
+@off-white: #F2F2F2;
+@dark-grey: #404040;
+@light-grey-2: #CBCBCB;
+@dark-red-brown: #402C29;
+
+body {
+	background-color: @dark-grey;
+	color: @off-white;
+}
+
+#container {
+	border: 3px double @dark-red-brown;
+	background-color: #F2F2F2;
+	background: url('/sites/eponymous4.com/files/images/transparent_white.png') repeat scroll 0 0 transparent;
+	color: #000;
+}
+
+#masthead {
+	float: left;
+	width: 870px;
+	margin-right: 0;
+	padding-left: 40px;
+	padding-right: 40px;
+	ul {
+		list-style-type: none;
+	}
+}
+
+#masthead header {
+	float: left;
+	width: 270px;
+	margin-right: 10px;
+}
+
+#nav-column-1 {
+	float: left;
+	width: 390px;
+	margin-right: 10px;
+	margin-top: 1.5em;
+	ul.links {
+		li {
+			float: left;
+			margin: 0;
+			padding: 0;
+			margin-left: 24px;
+		}
+	}
+}
+
+#nav-column-2 {
+	float: left;
+	width: 190px;
+	margin-right: 0px;
+	margin-top: 1.5em;
+}
+
+#nav-social li {
+	float: left;
+	margin: 0;
+	padding: 0;
+	margin-left: 6px;
+}
+
+#content {
+	#featured {
+		float: left;
+		width: 870px;
+		margin-right: 0px;
+		padding-left: 40px;
+		padding-right: 40px;
+		margin-bottom: 1.5em;
+	}
+	#column-1 {
+		float: left;
+		width: 550px;
+		margin-right: 10px;
+		padding-left: 40px;
+		padding-right: 40px;
+	}
+	#column-2 {
+		float: left;
+		width: 230px;
+		margin-right: 0;
+		padding-left: 40px;
+		padding-right: 40px;
+	}
+	#music-index {
+		float: left;
+		width: 870px;
+		margin-right: 0;
+		padding-left: 40px;
+		padding-right: 40px;
+	}
+}
+
+#album_player {
+	margin: 0 0 1em;
+}
+
+label
+{
+	float: left;
+	font-weight: bold;
+	width: 150px;
+}
+
+label.error, span.error
+{
+	color: #F99;
+	display: none;
+}
+
+input[type=text], input[type=email], input[type=password], select, textarea
+{
+	font-size: 100%;
+	font-family: inherit;
+	border: 1px solid @dark-red-brown;
+	border-radius: 4px;
+	padding: 3px;
+}
+
+img.bg
+{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: -1;
+	opacity:0.35;
+	filter:alpha(opacity=35);
+}
+
+table.track-table
+{
+	border: 1px dotted @dark-red-brown;
+	border-collapse: collapse;
+	thead {
+		th {
+			border: 1px dotted #999;
+			font-size: 7pt;
+			color: #FFF;
+			background-color: #333;
+		}
+	}
+	tbody {
+		tr:nth-child(2n) td {
+			background-color: @light-grey-2;
+		}
+		td {
+			border: 1px dotted #999;
+		}
+		td.track-column {
+			width: 50px;
+		}
+		td.play-column {
+			width: 20px;
+		}
+	}
+}
+
+ul.album-list
+{
+	margin-left: 0px;
+	li {
+		display: inline;
+	}
+}
+
+.hidden
+{
+	display: none;
+}
+
+.inline-list {
+	list-style-type: none;
+	li {
+		display: inline;
+		margin: 0 12px 0 0;
+		padding: 0;
+	}
+	li:before {
+		content: "» ";
+	}
+}
+
+.node {
+	margin-bottom: 1.5em;
+}

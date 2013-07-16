@@ -1,0 +1,277 @@
+<?php
+
+/**
+ * @file
+ * Connects data from the Observant Records database to Drupal.
+ *
+ */
+
+function observantrecords_help($path, $arg) {
+	switch ($path) {
+		case "admin/help#observantrecords":
+			return '<p>' . t('Connects Drupal to Observant Records data') . '</p>';
+			break;
+	}
+}
+
+function observantrecords_block_info() {
+	$blocks['artist_info'] = array(
+		'info' => t('Artist info'),
+		'cache' => DRUPAL_CACHE_PER_PAGE,
+	);
+	$blocks['album_info'] = array(
+		'info' => t('Album Info'),
+		'cache' => DRUPAL_CACHE_PER_PAGE,
+	);
+	$blocks['track_info'] = array(
+		'info' => t('Track info'),
+		'cache' => DRUPAL_CACHE_PER_PAGE,
+	);
+	return $blocks;
+}
+
+function observantrecords_block_view($delta = '') {
+	$node = menu_get_object();
+	switch($delta) {
+		case 'artist_info':
+			$block['subject'] = t('Artist info');
+			$block['content'] = array();
+			if (!empty($node)) {
+				$artist_info = new OR_Artist();
+				$block['content'] = array(
+					'#artists' => $artist_info->get_artist_block_content($node),
+					'#theme' => 'block_artist_info',
+				);
+			}
+			break;
+		case 'album_info':
+			$block['subject'] = t('Album info');
+			$block['content'] = array();
+			if (!empty($node)) {
+				$album_info = new OR_Albums();
+				if (!empty($node->field_release_alias)) {
+					$release_alias = $node->field_release_alias[$node->language][0]['value'];
+					$artist_alias = (!empty($node->field_artist_alias)) ? $node->field_artist_alias[$node->language][0]['value'] : null;
+					$block['content'] = array(
+						'#albums' => $album_info->get_album_block_content($node),
+						'#release_alias' => $release_alias,
+						'#artist_alias' => $artist_alias,
+						'#theme' => 'block_album_info',
+					);
+				}
+			}
+			break;
+		case 'track_info':
+			$block['subject'] = t('Track info');
+			$block['content'] = array();
+			if (!empty($node)) {
+				$track_info = new OR_Tracks();
+				$block['subject'] = t('Track info');
+				$block['content'] = array(
+					'#tracks' => $track_info->get_track_block_content($node),
+					'#theme' => 'block_track_info',
+				);
+			}
+			break;
+	}
+
+	return $block;
+}
+
+function observantrecords_node_view($node, $view_mode, $langcode) {
+	$artist_alias = (!empty($node->field_artist_alias)) ?
+		$node->field_artist_alias[$node->language][0]['value'] :
+		null;
+
+	$album_alias = (!empty($node->field_album_alias)) ?
+		$node->field_album_alias[$node->language][0]['value'] :
+		null;
+
+	$release_alias = (!empty($node->field_release_alias)) ?
+		$node->field_release_alias[$node->language][0]['value'] :
+		null;
+
+	$track_alias = (!empty($node->field_track_alias)) ?
+		$node->field_track_alias[$node->language][0]['value'] :
+		null;
+
+	$artist_info = new OR_Artist();
+	$album_info = new OR_Albums();
+	$track_info = new OR_Tracks();
+
+	$node->content['artists'] = array(
+		'#artists' => $artist_info->get_artist_node_content($node),
+		'#theme' => 'node_artist_info');
+
+	if (!empty($artist_alias) || !empty($album_alias) || !empty($release_alias)) {
+		$node->content['albums'] = array(
+			'#albums' => $album_info->get_album_node_content($node),
+			'#release_alias' => $release_alias,
+			'#theme' => 'node_album_info',
+		);
+	}
+
+	if (!empty($album_alias) || !empty($release_alias) || !empty($track_alias)) {
+		$node->content['tracks'] = array(
+			'#tracks' => $track_info->get_track_node_content($node),
+			'#theme' => 'node_track_info',
+		);
+	}
+}
+
+function observantrecords_theme() {
+	$theme = array(
+		'block_artist_info' => array(
+			'variables' => array(
+				'artists' => NULL,
+			),
+			'template' => 'observantrecords.block.artist_info',
+		),
+		'block_album_info' => array(
+			'variables' => array(
+				'albums' => NULL,
+				'release_alias' => NULL,
+				'artist_alias' => NULL,
+			),
+			'template' => 'observantrecords.block.album_info',
+		),
+		'block_track_info' => array(
+			'variables' => array(
+				'tracks' => NULL,
+			),
+			'template' => 'observantrecords.block.track_info',
+		),
+		'node_artist_info' => array(
+			'variables' => array(
+				'artists' => NULL,
+			),
+			'template' => 'observantrecords.block.artist_info',
+		),
+		'node_album_info' => array(
+			'variables' => array(
+				'albums' => NULL,
+				'release_alias' => NULL,
+			),
+			'template' => 'observantrecords.block.album_info',
+		),
+		'node_track_info' => array(
+			'variables' => array(
+				'tracks' => NULL,
+			),
+			'template' => 'observantrecords.node.track_info',
+		),
+	);
+	return $theme;
+}
+
+function observantrecords_menu() {
+	$items['audio'] = array(
+		'title' => 'Observant Records Audio Player',
+		'type' => MENU_CALLBACK,
+		'page callback' => 'observantrecords_audio',
+		'page arguments' => array(1),
+		'access callback' => TRUE,
+	);
+	
+	$items['music/audio/_mp3'] = array(
+		'title' => 'Observant Records Audio File Access',
+		'type' => MENU_CALLBACK,
+		'page callback' => 'observantrecords_audio_file',
+		'page arguments' => array(3, 4),	
+		'access callback' => TRUE,
+	);
+
+	$items['admin/config/media/observantrecords'] = array(
+		'title' => 'Observant Records Audio Configuration',
+		'description' => t('Configure Observant Records audio settings.'),
+		'type' => MENU_NORMAL_ITEM,
+		'page callback' => 'drupal_get_form',
+		'page arguments' => array('observantrecords_audio_form'),
+		'access arguments' => array('access administration pages'),
+	);
+
+	return $items;
+}
+
+function observantrecords_audio($id) {
+	$audio_info = new OR_Audio();
+	$rsAudio = $audio_info->get_audio($id);
+
+	if (!empty($rsAudio)) {
+		if ($rsAudio['audio_file_server'] == 'cdn.observantrecords.com' || $rsAudio['audio_file_server'] == 'observant-records.s3.amazonaws.com') {
+			header('Location: http://' . $rsAudio['audio_file_server'] . $rsAudio['audio_file_path'] . '/' . $rsAudio['audio_file_name']);
+			die();
+		} else {
+			$config_path = variable_get('observantrecords_file_path_override', $rsAudio['audio_file_path']);
+			$config_root = variable_get('observantrecords_file_root', conf_path() . '/files');
+			$config_url_path = variable_get('observantrecords_url_root', conf_path() . '/files');
+
+			$file_path = (!empty($config_path)) ? $config_path : $rsAudio['audio_file_path'];
+			$root_path = (!empty($config_root)) ? $config_root : $_SERVER['DOCUMENT_ROOT'] . conf_path() . '/files';
+			$url_path = (!empty($config_url_path)) ? $config_url_path : conf_path() . '/files';
+
+			$complete_path = $root_path . '/' . $file_path . '/' . $rsAudio['audio_file_name'];
+			$complete_url = 'http://' . $_SERVER['HTTP_HOST'] . '/' . $url_path . '/' . $file_path . '/' . $rsAudio['audio_file_name'];
+
+			if (file_exists($complete_path)) {
+				header('Location:' . $complete_url);
+				die();
+			}
+		}
+		
+	}
+	$error = <<< ERROR
+<p>Sorry, the file you attempted to play is not available.</p>
+ERROR;
+	return $error;
+}
+
+function observantrecords_audio_file($dir, $file) {
+	$legacy_dir = 'music/audio/_mp3/' . $dir;
+	$config_path = variable_get('observantrecords_file_path_override', $legacy_dir);
+	$config_root = variable_get('observantrecords_file_root', conf_path() . '/files');
+	$config_url_path = variable_get('observantrecords_url_root', conf_path() . '/files');
+
+	$file_path = (!empty($config_path)) ? $config_path : $legacy_dir;
+	$root_path = (!empty($config_root)) ? $config_root : $_SERVER['DOCUMENT_ROOT'] . conf_path() . '/files';
+	$url_path = (!empty($config_url_path)) ? $config_url_path : conf_path() . '/files';
+
+	$complete_path = $root_path . '/' . $file_path . '/' . $file;
+	$complete_url = 'http://' . $_SERVER['HTTP_HOST'] . '/' . $url_path . '/' . $file_path . '/' . $file;
+	
+	if (file_exists($complete_path)) {
+		header('Location:' . $complete_url);
+		die();
+	}
+	$error = <<< ERROR
+<p>Sorry, the file you attempted to play is not available.</p>
+
+ERROR;
+	return $error;
+}
+
+function observantrecords_audio_form($form, &$form_state) {
+	$form['observantrecords_file_root'] = array(
+		'#type' => 'textfield',
+		'#title' => t('File Root Path'),
+		'#default_value' => variable_get('observantrecords_file_root', conf_path() . '/files'),
+		'#size' => 50,
+		'#description' => t('The local file system root where audio files are stored, usually in /path/to/sites/yoursite/files.'),
+	);
+	$form['observantrecords_file_path_override'] = array(
+		'#type' => 'textfield',
+		'#title' => t('File Path Override'),
+		'#default_value' => variable_get('observantrecords_file_path_override'),
+		'#size' => 50,
+		'#description' => t('The local file system path to override the value of the path stored in the database (i.e. audio_mp3_file_name.) This path will be concatenated with <strong>File Root Path</strong>.'),
+	);
+	$form['observantrecords_url_root'] = array(
+		'#type' => 'textfield',
+		'#title' => t('URL Root Path'),
+		'#default_value' => variable_get('observantrecords_url_root', conf_path() . '/files'),
+		'#size' => 50,
+		'#description' => t('The URL root where audio files are stored, usually sites/yoursite/files.'),
+	);
+
+	return system_settings_form($form);
+}

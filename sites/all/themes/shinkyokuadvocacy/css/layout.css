@@ -1,0 +1,10 @@
+/* CSS crunched with Crunch - http://crunchapp.net/ */
+.centered{text-align:center;}
+input[type=text],input[type=password],input[type=email],input[type=url]{border-radius:4px;padding:3px;}
+textarea{border-radius:4px;}
+#container{display:block;width:950px;margin:0 auto;}
+#masthead{width:870px;margin-right:0;margin-top:1.5em;padding-right:40px;padding-left:40px;}
+#content #column-1{float:left;width:590px;margin-right:10px;padding-right:40px;}
+#content #column-2{float:left;width:310px;margin-right:0px;}
+.full-column{width:870px;margin-right:0;padding-right:40px;padding-left:40px;}
+.form-textarea-wrapper{width:600px;}

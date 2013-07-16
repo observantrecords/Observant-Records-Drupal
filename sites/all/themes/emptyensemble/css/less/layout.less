@@ -1,0 +1,160 @@
+/*
+    Document   : layout
+    Created on : Jul 31, 2012, 9:14:47 PM
+    Author     : Greg Bueno
+    Description:
+        Control layout for desktop web browsers.
+*/
+
+@dark-red-brown: #402C29;
+@light-grey: #CBCBCB;
+
+#masthead {
+	float: left;
+	width: 870px;
+	margin-right: 0;
+	margin-bottom: 1.5em;
+	padding-left: 40px;
+	padding-right: 40px;
+	header {
+		float: left;
+		width: 310px;
+		margin-right: 10px;
+	}
+}
+
+.nav-ul {
+	margin-top: 1.5em;
+	list-style-type: none;
+}
+
+#nav-main {
+	float: left;
+	width: 350px;
+	margin-right: 10px;
+	ul {
+		.nav-ul;
+		li {
+			float: left;
+			margin: 0 24px 0 0;
+			padding: 0;
+		}
+	}
+}
+
+#nav-social {
+	float: left;
+	width: 190px;
+	margin-right: 0;
+	ul {
+		.nav-ul;
+		li {
+			float: left;
+			margin: 0 6px 0 0;
+			padding: 0;
+		}
+	}
+}
+
+#container {
+	width: 950px;
+	margin: 0 auto;
+}
+
+#content {
+	float: left;
+	margin-right: 0;
+}
+
+#column-1 {
+	float: left;
+	width: 590px;
+	margin-right: 10px;
+	padding-left: 40px;
+	padding-right: 40px;
+}
+
+#column-2 {
+	float: left;
+	width: 270px;
+	margin-right: 0px;
+}
+
+#splash {
+	width: 960px;
+	margin-right: 0;
+}
+
+#music-index {
+	float: left;
+	width: 870px;
+	margin-right: 0;
+	padding-left: 40px;
+	padding-right: 40px;
+}
+
+.inline-list {
+	list-style-type: none;
+	li {
+		display: inline;
+		margin: 0 12px 0 0;
+		padding: 0;
+	}
+	li:before {
+		content: "» ";
+	}
+}
+
+.bg {
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 60%;
+	z-index: -1;
+	opacity: 0.1;
+	filter: alpha(opacity=10);
+}
+
+input[type=text], input[type=email], input[type=password], select, textarea
+{
+	font-size: 100%;
+	font-family: inherit;
+	border: 1px solid #BBB;
+	border-radius: 4px;
+	padding: 3px;
+}
+
+table.track-table
+{
+	border: 1px dotted @dark-red-brown;
+	border-collapse: collapse;
+	thead {
+		th {
+			border: 1px dotted #999;
+			font-size: 7pt;
+			color: #FFF;
+			background-color: #333;
+		}
+	}
+	tbody {
+		tr:nth-child(2n) td {
+			background-color: @light-grey;
+		}
+		td {
+			border: 1px dotted #999;
+		}
+		td.track-column {
+			width: 50px;
+		}
+		td.play-column {
+			width: 20px;
+		}
+	}
+}
+
+ul.album-list {
+	margin-left: 0px;
+	li {
+		display: inline;
+	}
+}

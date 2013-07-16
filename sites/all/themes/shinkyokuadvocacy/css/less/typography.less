@@ -1,0 +1,37 @@
+/*
+    Document   : typography
+    Created on : Aug 29, 2012, 9:24:40 PM
+    Author     : Greg Bueno
+    Description:
+        Typography style rules for Shinkyoku Advocacy
+*/
+
+.default-font {
+	font-family: "CartoGothicStd";
+	src: url("fonts/CartoGothicStd-Book-webfont.eot");
+	src: url("fonts/CartoGothicStd-Book-webfont.eot?iefix") format("eot"),
+		url("fonts/CartoGothicStd-Book-webfont.woff") format("woff"),
+		url("fonts/CartoGothicStd-Book-webfont.ttf") format("truetype"),
+		url("fonts/CartoGothicStd-Book-webfont.svg#webfont") format("svg");
+}
+
+@font-face {
+	.default-font;
+}
+@font-face {
+	.default-font;
+	font-weight: bold;
+	font-style: italic, oblique;
+}
+@font-face {
+	.default-font;
+	font-weight: bold;
+}
+
+body {
+	font-size: 100%;
+}
+
+#content {
+	font-family: 'CartoGothicStd', Helvetica, Arial, sans-serif;
+}

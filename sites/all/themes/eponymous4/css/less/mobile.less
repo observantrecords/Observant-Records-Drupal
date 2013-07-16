@@ -1,0 +1,170 @@
+/*
+    Document   : layout
+    Created on : Sep 10, 2011, 12:15:55 AM
+    Author     : Greg Bueno
+    Description:
+        Uses the Minimalist Design and Sleepy Hollow color schemes from the
+	Color Schemer Gallery.
+*/
+
+body {
+	background-color: #404040;
+	color: #F2F2F2;
+}
+
+#container {
+	border: 3px double #402C29;
+	background-color: #F2F2F2;
+	background: url('/sites/eponymous4.com/files/images/transparent_white.png') repeat scroll 0 0 transparent;
+	color: #000;
+}
+
+.container {
+	width: auto;
+	margin: 0 auto;
+}
+
+#masthead {
+	float: none;
+	width: auto;
+	margin-right: 0;
+	padding-left: 40px;
+	padding-right: 40px;
+	header {
+		float: none;
+		width: auto;
+		margin-right: 10px;
+	}
+	ul {
+		list-style-type: none;
+	}
+}
+
+#nav-column-1 {
+	float: none;
+	width: auto;
+	margin-right: 0;
+	margin-top: 1.5em;
+	ul.links {
+		li {
+			float: none;
+			margin: 0;
+			padding: 0;
+			margin-left: 24px;
+		}
+	}
+}
+
+#nav-column-2 {
+	float: none;
+	width: auto;
+	margin-right: 0;
+	margin-top: 1.5em;
+}
+
+#nav-social li {
+	float: none;
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+	margin-left: 6px;
+}
+
+#content {
+	float: none;
+	width: auto;
+	margin-right: 0px;
+	#featured {
+		float: none;
+		width: auto;
+		margin-right: 0px;
+		padding-left: 40px;
+		padding-right: 40px;
+		margin-bottom: 1.5em;
+	}
+	#column-1 {
+		float: none;
+		width: auto;
+		margin-right: 10px;
+		padding-left: 40px;
+		padding-right: 40px;
+	}
+	#column-2 {
+		#column-1;
+	}
+	#music-index {
+		#column-1;
+	}
+}
+
+#album_player {
+	margin: 0 0 1em;
+}
+
+label {
+	float: left;
+	font-weight: bold;
+	width: 150px;
+	margin-right: 10px;
+}
+
+label.error, span.error {
+	color: #F99;
+	display: none;
+}
+
+input[type=text], input[type=email], select, textarea
+{
+	font-size: 100%;
+	font-family: inherit;
+	border: 1px solid #402C29;
+	width: 230px;
+}
+
+img.bg {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: -1;
+	opacity:0.35;
+	filter:alpha(opacity=35);
+}
+
+table.track-table {
+	border: 1px dotted #402C29;
+	border-collapse: collapse;
+	thead {
+		th {
+			border: 1px dotted #999;
+			font-size: 7pt;
+			color: #FFF;
+			background-color: #333;
+		}
+	}
+	tbody {
+		tr:nth-child(2n) td {
+			background-color: #CBCBCB;
+		}
+		td {
+			border: 1px dotted #999;
+		}
+		td.track-column {
+			width: 50px;
+		}
+		td.play-column {
+			width: 20px;
+		}
+	}
+}
+
+ul.album-list {
+	margin-left: 0px;
+	li {
+		display: inline;
+	}
+}
+
+.hidden {
+	display: none;
+}

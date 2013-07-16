@@ -1,0 +1,10 @@
+/* CSS crunched with Crunch - http://crunchapp.net/ */
+#container{width:auto;margin:0 auto;}
+#column-1{width:auto;}
+#column-2{width:auto;}
+#masthead{width:auto;margin-right:0;margin-bottom:1.5em;}#masthead header{width:auto;margin-right:10px;}
+#content #music-index{float:none;width:auto;margin-right:0;padding-left:40px;padding-right:40px;}
+#nav-main{float:none;width:auto;margin-right:10px;}#nav-main ul{list-style-type:disc;}#nav-main ul li{float:none;display:block;margin:0 24px auto 0;padding:0;}
+#nav-social{float:none;width:auto;margin-right:0;}#nav-social ul{margin-top:1.5em;list-style-type:none;}#nav-social ul li{float:none;display:inline-block;margin:0 12px 0 0;padding:0;}
+#title{font-size:3em;}
+input[type=text]{width:230px;}

@@ -1,0 +1,27 @@
+/* CSS crunched with Crunch - http://crunchapp.net/ */
+body{background-color:#404040;color:#F2F2F2;}
+#container{border:3px double #402C29;background-color:#F2F2F2;background:url('/sites/eponymous4.com/files/images/transparent_white.png') repeat scroll 0 0 transparent;color:#000;}
+#masthead{float:left;width:870px;margin-right:0;padding-left:40px;padding-right:40px;}#masthead ul{list-style-type:none;}
+#masthead header{float:left;width:270px;margin-right:10px;}
+#nav-column-1{float:left;width:390px;margin-right:10px;margin-top:1.5em;}#nav-column-1 ul.links li{float:left;margin:0;padding:0;margin-left:24px;}
+#nav-column-2{float:left;width:190px;margin-right:0px;margin-top:1.5em;}
+#nav-social li{float:left;margin:0;padding:0;margin-left:6px;}
+#content #featured{float:left;width:870px;margin-right:0px;padding-left:40px;padding-right:40px;margin-bottom:1.5em;}
+#content #column-1{float:left;width:550px;margin-right:10px;padding-left:40px;padding-right:40px;}
+#content #column-2{float:left;width:230px;margin-right:0;padding-left:40px;padding-right:40px;}
+#content #music-index{float:left;width:870px;margin-right:0;padding-left:40px;padding-right:40px;}
+#album_player{margin:0 0 1em;}
+label{float:left;font-weight:bold;width:150px;}
+label.error,span.error{color:#F99;display:none;}
+input[type=text],input[type=email],input[type=password],select,textarea{font-size:100%;font-family:inherit;border:1px solid #402C29;border-radius:4px;padding:3px;}
+img.bg{position:fixed;top:0;left:0;width:100%;z-index:-1;opacity:0.35;filter:alpha(opacity=35);}
+table.track-table{border:1px dotted #402C29;border-collapse:collapse;}table.track-table thead th{border:1px dotted #999;font-size:7pt;color:#FFF;background-color:#333;}
+table.track-table tbody tr:nth-child(2n) td{background-color:#CBCBCB;}
+table.track-table tbody td{border:1px dotted #999;}
+table.track-table tbody td.track-column{width:50px;}
+table.track-table tbody td.play-column{width:20px;}
+ul.album-list{margin-left:0px;}ul.album-list li{display:inline;}
+.hidden{display:none;}
+.inline-list{list-style-type:none;}.inline-list li{display:inline;margin:0 12px 0 0;padding:0;}
+.inline-list li:before{content:"» ";}
+.node{margin-bottom:1.5em;}
