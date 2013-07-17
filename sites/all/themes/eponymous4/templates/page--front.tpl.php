@@ -56,7 +56,7 @@ if (!empty($album_aliases)):
 						<ul id="album-carousel" class="jcarousel-skin-ep4">
 						<?php foreach ($albums as $album): ?>
 							<?php if (false !== array_search($album['album_alias'], $album_aliases)): ?>
-							<li><a href="/music/<?php echo $album['album_alias']; ?>/"><img src="/sites/eponymous4.com/files/images/_covers/_exm_front_200_<?php echo $album['album_image']; ?>" alt="[<?php echo $album['album_title']; ?>]" title="[<?php echo $album['album_title']; ?>]" /></a></li>
+							<li><a href="/music/<?php echo $album['album_alias']; ?>/"><img src="<?php echo OBSERVANTRECORDS_CDN_BASE_URI;?>/artists/<?php echo $album['artist_alias'];?>/albums/<?php echo $album['album_alias']; ?>/<?php echo strtolower($album['release_catalog_num']); ?>/images/cover_front_medium.jpg" alt="[<?php echo $album['album_title']; ?>]" title="[<?php echo $album['album_title']; ?>]" width="200" /></a></li>
 							<?php endif; ?>
 						<?php endforeach; ?>
 						</ul>
