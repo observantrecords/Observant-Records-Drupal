@@ -16,10 +16,10 @@
 					<?php //print theme('links__system_secondary_menu', array('links' => $secondary_menu, 'attributes' => array('id' => 'secondary-menu', 'class' => array('links', 'inline', 'clearfix')))); ?>
 					<?php endif; ?>
 					<ul class="links inline clearfix">
-						<li><a href="http://twitter.com/EmptyEnsemble"><img src="<?php echo emptyensemble_get_vigilante_uri(); ?>/images/icons/twitter.png" alt="[Twitter]" title="[Twitter]" /></a></li>
-						<li><a href="http://facebook.com/EmptyEnsemble"><img src="<?php echo emptyensemble_get_vigilante_uri(); ?>/images/icons/facebook.png" alt="[Facebook]" title="[Facebook]" /></a></li>
-						<li><a href="http://soundcloud.com/observantrecords"><img src="<?php echo emptyensemble_get_vigilante_uri(); ?>/images/icons/soundcloud.png" alt="[Soundcloud]" title="[Soundcloud]" /></a></li>
-						<li><a href="http://youtube.com/user/observantrecords"><img src="<?php echo emptyensemble_get_vigilante_uri(); ?>/images/icons/youtube.png" alt="[YouTube]" title="[YouTube]" /></a></li>
+						<li><a href="http://twitter.com/EmptyEnsemble"><img src="<?php echo OBSERVANTRECORDS_CDN_BASE_URI; ?>/web/images/icons/twitter.png" alt="[Twitter]" title="[Twitter]" /></a></li>
+						<li><a href="http://facebook.com/EmptyEnsemble"><img src="<?php echo OBSERVANTRECORDS_CDN_BASE_URI; ?>/web/images/icons/facebook.png" alt="[Facebook]" title="[Facebook]" /></a></li>
+						<li><a href="http://soundcloud.com/observantrecords"><img src="<?php echo OBSERVANTRECORDS_CDN_BASE_URI; ?>/web/images/icons/soundcloud.png" alt="[Soundcloud]" title="[Soundcloud]" /></a></li>
+						<li><a href="http://youtube.com/user/observantrecords"><img src="<?php echo OBSERVANTRECORDS_CDN_BASE_URI; ?>/web/images/icons/youtube.png" alt="[YouTube]" title="[YouTube]" /></a></li>
 					</ul>
 				</nav>
 			</div>

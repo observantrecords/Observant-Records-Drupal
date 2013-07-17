@@ -28,7 +28,7 @@
 				endforeach;
 				?>
 				</audio>
-				<a href="#" id="button-<?php echo $track['track_recording_id']; ?>" class="play-button"><img src="<?php echo eponymous4_get_vigilante_uri(); ?>/images/icons/speaker-grey.gif" alt="[Play]" title="[Play]" /></a>
+				<a href="#" id="button-<?php echo $track['track_recording_id']; ?>" class="play-button"><img src="<?php echo OBSERVANTRECORDS_CDN_BASE_URI; ?>/web/images/icons/speaker-grey.gif" alt="[Play]" title="[Play]" /></a>
 				<?php endif; ?>
 			</td>
 		</tr>
