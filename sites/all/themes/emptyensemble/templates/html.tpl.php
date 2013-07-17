@@ -52,18 +52,18 @@
 		?></title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="<?php echo emptyensemble_get_vigilante_uri(); ?>/css/blueprint/screen.css" type="text/css" media="screen, projection" />
-		<link rel="stylesheet" href="<?php echo emptyensemble_get_vigilante_uri(); ?>/css/blueprint/print.css" type="text/css" media="print" />
-		<!--[if lt IE 8]><link rel="stylesheet" href="<?php echo emptyensemble_get_vigilante_uri(); ?>/css/blueprint/ie.css" type="text/css" media="screen, projection" /><![endif]-->
-		<!--[if lt IE 9]><script type="text/javascript" src="<?php echo emptyensemble_get_vigilante_uri(); ?>/js/html5.js"></script><![endif]-->
-		<link rel="stylesheet" href="<?php echo emptyensemble_get_vigilante_uri(); ?>/css/facebox.css" type="text/css" media="screen, projection" />
+		<link rel="stylesheet" href="<?php echo OBSERVANTRECORDS_CDN_BASE_URI; ?>/css/blueprint/screen.css" type="text/css" media="screen, projection" />
+		<link rel="stylesheet" href="<?php echo OBSERVANTRECORDS_CDN_BASE_URI; ?>/css/blueprint/print.css" type="text/css" media="print" />
+		<!--[if lt IE 8]><link rel="stylesheet" href="<?php echo OBSERVANTRECORDS_CDN_BASE_URI; ?>/css/blueprint/ie.css" type="text/css" media="screen, projection" /><![endif]-->
+		<!--[if lt IE 9]><script type="text/javascript" src="<?php echo OBSERVANTRECORDS_CDN_BASE_URI; ?>/js/html5.js"></script><![endif]-->
+		<link rel="stylesheet" href="<?php echo OBSERVANTRECORDS_CDN_BASE_URI; ?>/css/facebox.css" type="text/css" media="screen, projection" />
 		<?php print $styles; ?>
 		<?php print $scripts; ?>
-		<script type="text/javascript" src="<?php echo emptyensemble_get_vigilante_uri(); ?>/js/facebox.js"></script>
+		<script type="text/javascript" src="<?php echo OBSERVANTRECORDS_CDN_BASE_URI; ?>/js/facebox.js"></script>
 		<script type="text/javascript">
 		var facebox_options = {
-			closeImage: '<?php echo emptyensemble_get_vigilante_uri(); ?>/images/closelabel.gif',
-			loadingImage: '<?php echo emptyensemble_get_vigilante_uri(); ?>/images/loading.gif'
+			closeImage: '<?php echo OBSERVANTRECORDS_CDN_BASE_URI; ?>/images/closelabel.gif',
+			loadingImage: '<?php echo OBSERVANTRECORDS_CDN_BASE_URI; ?>/images/loading.gif'
 		};
 		(function ($) {
 			$(function () {
