@@ -148,7 +148,7 @@ SetEnvIf HOST test.emptyensemble.com test-empty
 SetEnvIf HOST test.eponymous4.com test-ep4
 SetEnvIf HOST test.observantrecords.com test-observant
 SetEnvIf HOST test.shinkyokuadvocacy.com test-shinkyoku
-SetEnvIf HOST *observantrecords.org dev-org
+SetEnvIf HOST observantrecords.org dev-org
 AuthType Basic
 AuthUserFile /home/nemesisv/.htpasswd
 AuthName "Vigilant Media Drupal development site"
@@ -166,5 +166,5 @@ Deny from env=test-ep4
 Deny from env=test-observant
 Deny from env=test-shinkyoku
 Deny from env=test-vigilant
-Deny from env=test-dev-org
+Deny from env=dev-org
 Satisfy any
