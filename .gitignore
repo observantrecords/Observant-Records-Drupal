@@ -7,3 +7,4 @@ sites/*/files
 sites/*/private
 
 environment.php
+observantrecords.config.inc
