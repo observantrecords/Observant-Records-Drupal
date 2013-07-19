@@ -148,12 +148,8 @@ SetEnvIf HOST test.emptyensemble.com test-empty
 SetEnvIf HOST test.eponymous4.com test-ep4
 SetEnvIf HOST test.observantrecords.com test-observant
 SetEnvIf HOST test.shinkyokuadvocacy.com test-shinkyoku
-SetEnvIf HOST observantrecords.org dev-observantrecords-org
-SetEnvIf HOST eponymous4.org dev-eponymous4-org
-SetEnvIf HOST emptyensemble.org dev-emptyensemble-org
-SetEnvIf HOST shinkyokuadvocacy.org dev-shinkyokuadvocacy-org
 AuthType Basic
-AuthUserFile /home/nemesisv/.htpasswd
+AuthUserFile /home/grebue5/.htpasswd
 AuthName "Vigilant Media Drupal development site"
 require valid-user
 
