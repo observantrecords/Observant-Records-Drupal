@@ -3,7 +3,7 @@
     Created on : Sep 10, 2011, 12:15:55 AM
     Author     : Greg Bueno
     Description:
-        Uses the Minimalist Design and Sleepy Hollow color schemes from the
+        Uses the Minimalist, Sleepy Hollow and My Crazy Flat UI Status color schemes from the
 	Color Schemer Gallery.
 */
 
@@ -11,17 +11,19 @@
 @dark-grey: #404040;
 @light-grey-2: #CBCBCB;
 @dark-red-brown: #402C29;
+@medium-blue: #304B75;
+
+@flat-black: #3E4561;
+@flat-red: #F16543;
+@flat-blue: #00B5B5;
+@flat-white: #F0F0F0;
 
 body {
-	background-color: @dark-grey;
-	color: @off-white;
+	background-color: @flat-white;
+	color: @flat-black;
 }
 
 #container {
-	border: 3px double @dark-red-brown;
-	background-color: #F2F2F2;
-	background: url('/sites/eponymous4.com/files/images/transparent_white.png') repeat scroll 0 0 transparent;
-	color: #000;
 }
 
 #masthead {
@@ -124,7 +126,7 @@ input[type=text], input[type=email], input[type=password], select, textarea
 	font-size: 100%;
 	font-family: inherit;
 	border: 1px solid @dark-red-brown;
-	border-radius: 4px;
+	border-radius: 2px;
 	padding: 3px;
 }
 
@@ -145,18 +147,18 @@ table.track-table
 	border-collapse: collapse;
 	thead {
 		th {
-			border: 1px dotted #999;
+			border: 1px solid @flat-black;
 			font-size: 7pt;
 			color: #FFF;
-			background-color: #333;
+			background-color: @flat-red;
 		}
 	}
 	tbody {
 		tr:nth-child(2n) td {
-			background-color: @light-grey-2;
+			background-color: inherit;
 		}
 		td {
-			border: 1px dotted #999;
+			border: 1px solid @flat-black;
 		}
 		td.track-column {
 			width: 50px;
@@ -193,5 +195,15 @@ ul.album-list
 }
 
 .node {
+	padding-left: 40px;
+	padding-right: 40px;
+	padding-top: 1.5em;
 	margin-bottom: 1.5em;
+	background-color: #FFF;
+	color: #000;
+}
+
+.views-row {
+	background-color: #FFF;
+	color: #000;
 }
