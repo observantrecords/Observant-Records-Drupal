@@ -7,16 +7,28 @@
 	Color Schemer Gallery.
 */
 
+@off-white: #F2F2F2;
+@dark-grey: #404040;
+@light-grey-2: #CBCBCB;
+@dark-red-brown: #402C29;
+@medium-blue: #304B75;
+
+@flat-black: #3E4561;
+@flat-red: #F16543;
+@flat-blue: #00B5B5;
+@flat-white: #F0F0F0;
+
 a {
-	color: #304B75;
+	color: @medium-blue;
 }
 
 a:hover {
-	color: #402C29;
+	color: @flat-red;
 }
 
 h1, h2, h3, h4, h5, h6 {
 	font-family: 'Helvetica', 'Arial', sans-serif;
+	color: @flat-black;
 }
 
 h3[property='dc:title'] a {
@@ -28,12 +40,12 @@ h3[property='dc:title'] a {
 	text-transform: lowercase;
 	a {
 		text-decoration: none;
-		color: #000;
+		color: @flat-black;
 	}
 }
 
 #content {
-	font-family: 'Georgia', serif;
+	font-family: 'Helvetica', 'Arial', sans-serif;
 }
 
 .form_hidden {
