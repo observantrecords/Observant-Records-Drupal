@@ -94,6 +94,17 @@ class OR_Albums extends OR_Model {
 		
 		$rsRelease = db_query($query, $args)->fetchAssoc();
 		
+		$query = '';
+		$query .= 'select e.* from {ep4_ecommerce} as e ';
+		$query .= 'left join {ep4_albums_releases} as r ';
+		$query .= 'on r.release_id = e.ecommerce_release_id ';
+		$query .= 'where r.release_alias = :release_alias ';
+		$query .= 'and e.ecommerce_deleted = 0 ';
+		$query .= 'order by e.ecommerce_list_order';
+		
+		$rsEcommerce = db_query($query, $args)->fetchAllAssoc('ecommerce_label');
+		
+		$rsRelease['release_ecommerce'] = $rsEcommerce;
 		$rsAlbum['releases'] = array($release_alias => $rsRelease);
 		
 		$this->deactivate();
@@ -116,12 +127,12 @@ class OR_Albums extends OR_Model {
 				$artist_alias = $node_view['field_artist_alias']['#items'][0]['value'];
 			}
 			
-			if (!empty($album_alias)) {
-				$content = array($this->get_album($album_alias));
-			} elseif (!empty($node->field_release_alias)) {
+			if (!empty($node->field_release_alias)) {
 				$content = array($this->get_release($release_alias));
+			} elseif (!empty($album_alias)) {
+				//$content = array($this->get_album($album_alias));
 			} elseif (!empty($artist_alias)) {
-				$content = $this->get_albums($artist_alias);
+				//$content = $this->get_albums($artist_alias);
 			}
 		}
 		
