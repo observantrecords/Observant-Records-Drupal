@@ -28,10 +28,29 @@
 				?>
 <h3>Buy</h3>
 
+<p>
+					<?php if (!empty($ecommerce_links['Observant Records Shop'])): ?>
+	<a href="<?php echo $ecommerce_links['Observant Records Shop']->{'ecommerce_url'}; ?>" class="button"><img src="<?php echo OBSERVANTRECORDS_CDN_BASE_URI; ?>/web/images/icons/checkout3-grey.gif" /> CD</a>
+					<?php endif; ?>
+					<?php if (!empty($ecommerce_links['Bandcamp'])): ?>
+	<a href="<?php echo $ecommerce_links['Bandcamp']->{'ecommerce_url'};;?>" class="button"><img src="<?php echo OBSERVANTRECORDS_CDN_BASE_URI; ?>/web/images/icons/download-music-grey.gif" /> Digital</a>
+					<?php endif; ?>
+</p>
+
+					<?php if ((!empty($ecommerce_links['Observant Records Shop']) || !empty($ecommerce_links['Bandcamp'])) && count($ecommerce_links) >= 2): ?>
+<p>
+	Also available from:
+</p>
+					<?php endif; ?>
 <ul>
-	<?php foreach ($ecommerce_links as $ecommerce_label => $ecommerce_link): ?>
+						<?php
+						foreach ($ecommerce_links as $ecommerce_label => $ecommerce_link):
+							if ($ecommerce_label != 'Bandcamp' && $ecommerce_label != 'Observant Records Shop'):
+						?>
 	<li><a href="<?php echo $ecommerce_link->ecommerce_url; ?>"><?php echo $ecommerce_label; ?></a></li>
-	<?php endforeach; ?>
+						<?php
+							endif;
+						endforeach; ?>
 </ul>
 				<?php endif; ?>
 			<?php else: ?>
