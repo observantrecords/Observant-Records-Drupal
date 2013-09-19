@@ -17,14 +17,37 @@
 	</li>
 				<?php endif; ?>
 </ul>
-				<?php /*if(!empty($album['releases'][$release_alias]['release_store_description'])): ?>
+				<?php
+				if (count($album['releases'][$release_alias]['release_ecommerce']) > 0):
+					$ecommerce_links = $album['releases'][$release_alias]['release_ecommerce'];
+				?>
 <h3>Buy</h3>
-				<?php echo $album['releases'][$release_alias]['release_store_description']; ?>
+
+<p>
+					<?php if (!empty($ecommerce_links['Observant Records Shop'])): ?>
+	<a href="<?php echo $ecommerce_links['Observant Records Shop']->{'ecommerce_url'}; ?>" class="button"><img src="<?php echo OBSERVANTRECORDS_CDN_BASE_URI; ?>/web/images/icons/checkout3-grey.gif" /> CD</a>
+					<?php endif; ?>
+					<?php if (!empty($ecommerce_links['Bandcamp'])): ?>
+	<a href="<?php echo $ecommerce_links['Bandcamp']->{'ecommerce_url'};;?>" class="button"><img src="<?php echo OBSERVANTRECORDS_CDN_BASE_URI; ?>/web/images/icons/download-music-grey.gif" /> Digital</a>
+					<?php endif; ?>
+</p>
+
+					<?php if ((!empty($ecommerce_links['Observant Records Shop']) || !empty($ecommerce_links['Bandcamp'])) && count($ecommerce_links) >= 2): ?>
+<p>
+	Also available from:
+</p>
+					<?php endif; ?>
+<ul>
+						<?php
+						foreach ($ecommerce_links as $ecommerce_label => $ecommerce_link):
+							if ($ecommerce_label != 'Bandcamp' && $ecommerce_label != 'Observant Records Shop'):
+						?>
+	<li><a href="<?php echo $ecommerce_link->ecommerce_url; ?>"><?php echo $ecommerce_label; ?></a></li>
+						<?php
+							endif;
+						endforeach; ?>
+</ul>
 				<?php endif; ?>
-				<?php if(!empty($album['releases'][$release_alias]['release_credits'])): ?>
-<h3>Credits</h3>
-				<?php echo $album['releases'][$release_alias]['release_credits']; ?>
-				<?php endif;*/ ?>
 			<?php else: ?>
 				<?php foreach ($album['releases'] as $release): ?>
 <ul>
@@ -34,14 +57,6 @@
 	</li>
 					<?php endif; ?>
 </ul>
-					<?php /* if(!empty($release['release_store_description'])): ?>
-<h3>Buy</h3>
-					<?php echo $release['release_store_description']; ?>
-					<?php endif; ?>
-					<?php if(!empty($release['release_credits'])): ?>
-<h3>Credits</h3>
-					<?php echo $release['release_credits']; ?>
-					<?php endif; */?>
 				<?php endforeach; ?>
 			<?php endif; ?>
 		<?php endif; ?>
