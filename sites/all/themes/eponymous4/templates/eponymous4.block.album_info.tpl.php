@@ -10,43 +10,45 @@
 	<a href="<?php echo $cover_url_base . '/cover_front_large.jpg'; ?>" rel="facebox" class="smaller">View larger image</a>
 </p>
 
-<?php
-/*
- * 
 <ul>
 				<?php if (!empty($album['releases'][$release_alias]['release_release_date'])): ?>
 	<li>
-		Release date: <?php echo date('m/d/Y', strtotime($album['releases'][$release_alias]['release_release_date'])); ?>
+		Release date: <strong><?php echo date('F d, Y', strtotime($album['releases'][$release_alias]['release_release_date'])); ?></strong>
 	</li>
 				<?php endif; ?>
 				<?php if (!empty($album['releases'][$release_alias]['release_label'])): ?>
 	<li>
-		Label: <?php echo $album['releases'][$release_alias]['release_label']; ?>
+		Label: <strong><?php echo $album['releases'][$release_alias]['release_label']; ?></strong>
 	</li>
 				<?php endif; ?>
 </ul>
- */
-?>
+				<?php
+				if (!empty($album['releases'][$release_alias]['release_ecommerce'])):
+					$ecommerce_links = $album['releases'][$release_alias]['release_ecommerce'];
+				?>
+<h3>Buy</h3>
+
+<ul>
+	<?php foreach ($ecommerce_links as $ecommerce_label => $ecommerce_link): ?>
+	<li><a href="<?php echo $ecommerce_link->ecommerce_url; ?>"><?php echo $ecommerce_label; ?></a></li>
+	<?php endforeach; ?>
+</ul>
+				<?php endif; ?>
 			<?php else: ?>
-<?php
-/*
- * 
 				<?php foreach ($album['releases'] as $release): ?>
 <ul>
 					<?php if(!empty($release['release_release_date'])): ?>
 	<li>
-		Release date: <?php echo date('m/d/Y', strtotime($release['release_release_date'])); ?>
+		Release date: <strong><?php echo date('m/d/Y', strtotime($release['release_release_date'])); ?></strong>
 	</li>
 					<?php endif; ?>
 					<?php if(!empty($release['release_label'])): ?>
 	<li>
-		Label: <?php echo $release['release_label']; ?>
+		Label: <strong><?php echo $release['release_label']; ?></strong>
 	</li>
 					<?php endif; ?>
 </ul>
 				<?php endforeach; ?>
- */
-?>
 			<?php endif; ?>
 		<?php endif; ?>
 	<?php endforeach; ?>
