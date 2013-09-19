@@ -10,22 +10,23 @@
 	<a href="<?php echo $cover_url_base . '/cover_front_large.jpg'; ?>" rel="facebox" class="smaller">View larger image</a>
 </p>
 
-<ul>
-				<?php if (!empty($album['releases'][$release_alias]['release_release_date'])): ?>
-	<li>
-		Release date: <strong><?php echo date('F d, Y', strtotime($album['releases'][$release_alias]['release_release_date'])); ?></strong>
-	</li>
-				<?php endif; ?>
-				<?php if (!empty($album['releases'][$release_alias]['release_label'])): ?>
-	<li>
-		Label: <strong><?php echo $album['releases'][$release_alias]['release_label']; ?></strong>
-	</li>
-				<?php endif; ?>
-</ul>
 				<?php
 				if (!empty($album['releases'][$release_alias]['release_ecommerce'])):
 					$ecommerce_links = $album['releases'][$release_alias]['release_ecommerce'];
 				?>
+<ul>
+					<?php if (!empty($album['releases'][$release_alias]['release_release_date'])): ?>
+	<li>
+		Release date: <strong><?php echo date('F d, Y', strtotime($album['releases'][$release_alias]['release_release_date'])); ?></strong>
+	</li>
+					<?php endif; ?>
+					<?php if (!empty($album['releases'][$release_alias]['release_label'])): ?>
+	<li>
+		Label: <strong><?php echo $album['releases'][$release_alias]['release_label']; ?></strong>
+	</li>
+					<?php endif; ?>
+</ul>
+
 <h3>Buy</h3>
 
 <p>
