@@ -8,3 +8,9 @@ sites/*/private
 
 environment.php
 observantrecords.config.inc
+
+sites/all/modules/custom/observantrecords/
+sites/all/themes/emptyensemble/
+sites/all/themes/eponymous4/
+sites/all/themes/observantrecs/
+sites/all/themes/shinkyokuadvocacy/
