@@ -147,7 +147,6 @@ SetEnvIf HOST dev.eponymous4.com dev-ep4
 SetEnvIf HOST dev.observantrecords.com dev-observant
 SetEnvIf HOST dev.shinkyokuadvocacy.com dev-shinkyoku
 SetEnvIf HOST dev.penziasandwilson.com dev-penzias
-SetEnvIf HOST penziasandwilson.com prod-penzias
 SetEnvIf HOST test.emptyensemble.com test-empty
 SetEnvIf HOST test.eponymous4.com test-ep4
 SetEnvIf HOST test.observantrecords.com test-observant
@@ -170,5 +169,4 @@ Deny from env=test-ep4
 Deny from env=test-observant
 Deny from env=test-shinkyoku
 Deny from env=test-penzias
-Deny from env=prod-penzias
 Satisfy any
