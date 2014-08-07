@@ -141,3 +141,32 @@ DirectoryIndex index.php index.html index.htm
     </FilesMatch>
   </IfModule>
 </IfModule>
+
+SetEnvIf HOST dev.emptyensemble.com dev-empty
+SetEnvIf HOST dev.eponymous4.com dev-ep4
+SetEnvIf HOST dev.observantrecords.com dev-observant
+SetEnvIf HOST dev.shinkyokuadvocacy.com dev-shinkyoku
+SetEnvIf HOST dev.penziasandwilson.com dev-penzias
+SetEnvIf HOST test.emptyensemble.com test-empty
+SetEnvIf HOST test.eponymous4.com test-ep4
+SetEnvIf HOST test.observantrecords.com test-observant
+SetEnvIf HOST test.shinkyokuadvocacy.com test-shinkyoku
+SetEnvIf HOST test.penziasandwilson.com test-penzias
+AuthType Basic
+AuthUserFile /home/grebue5/.htpasswd
+AuthName "Observant Records Drupal development site"
+require valid-user
+
+Order allow,deny
+Allow from all
+Deny from env=dev-empty
+Deny from env=dev-ep4
+Deny from env=dev-observant
+Deny from env=dev-shinkyoku
+Deny from env=dev-penzias
+Deny from env=test-empty
+Deny from env=test-ep4
+Deny from env=test-observant
+Deny from env=test-shinkyoku
+Deny from env=test-penzias
+Satisfy any

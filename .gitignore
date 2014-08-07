@@ -1,6 +1,17 @@
 # Ignore configuration files that may contain sensitive information.
 sites/*/settings*.php
+sites/all/environment.php
 
 # Ignore paths that contain user-generated content.
 sites/*/files
 sites/*/private
+
+environment.php
+observantrecords.config.inc
+
+sites/all/modules/custom/observantrecords/
+sites/all/themes/emptyensemble/
+sites/all/themes/eponymous4/
+sites/all/themes/observantrecs/
+sites/all/themes/shinkyokuadvocacy/
+sites/all/themes/penziasandwilson/
