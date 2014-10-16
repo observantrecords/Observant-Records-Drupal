@@ -7879,6 +7879,7 @@ function entity_prepare_view($entity_type, $entities, $langcode = NULL) {
     $langcode = $GLOBALS['language_content']->language;
   }
 
+<<<<<<< HEAD
   // To ensure hooks are only run once per entity, check for an
   // entity_view_prepared flag and only process items without it.
   // @todo: resolve this more generally for both entity and field level hooks.
@@ -7887,6 +7888,13 @@ function entity_prepare_view($entity_type, $entities, $langcode = NULL) {
     if (empty($entity->entity_view_prepared)) {
       // Add this entity to the items to be prepared.
       $prepare[$id] = $entity;
+=======
+  $links[] = "<a href=\"index.php\">". t("home") ."</a>";
+  if (user_access("post content")) {
+    $links[] = "<a href=\"submit.php\">". t("submit") ."</a>";
+  }
+  $links[] = "<a href=\"account.php\">". t("account") ."</a>";
+>>>>>>> FETCH_HEAD
 
       // Mark this item as prepared.
       $entity->entity_view_prepared = TRUE;
