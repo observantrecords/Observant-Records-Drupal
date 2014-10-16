@@ -1,6 +1,5 @@
 <?php
 
-<<<<<<< HEAD
 /**
  * @file
  * Administration functions for locale.module.
@@ -1823,11 +1822,6 @@ function _locale_export_wrap($str, $len) {
   $return[] = $cur;
 
   return implode("\n", $return);
-=======
-function locale_init() {
-  global $languages, $user;
-  return ($languages ? ((is_object($user) && $user->id && $user->language) ? $user->language : key($languages)) : 0);
->>>>>>> FETCH_HEAD
 }
 
 /**
